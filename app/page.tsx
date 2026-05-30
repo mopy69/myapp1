@@ -36,7 +36,14 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-6">Novedades de la revista</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6"> </div>
           </div>
-          <Card />
+          <div className="flex flex-row w-full max-w-6xl mx-auto py-10">
+          <Card titulo="Título de la tarjeta" imagenUrl="https://via.placeholder.com/400x200" descripcion="Este es un ejemplo de una tarjeta simple con Tailwind CSS." botonTexto="Acción" />
+<Card titulo="Título de la tarjeta" imagenUrl="https://via.placeholder.com/400x200" descripcion="Este es un ejemplo de una tarjeta simple con Tailwind CSS." botonTexto="Acción" />
+<Card titulo="Título de la tarjeta" imagenUrl="https://via.placeholder.com/400x200" descripcion="Este es un ejemplo de una tarjeta simple con Tailwind CSS." botonTexto="Acción" />
+<Card titulo="Título de la tarjeta" imagenUrl="https://via.placeholder.com/400x200" descripcion="Este es un ejemplo de una tarjeta simple con Tailwind CSS." botonTexto="Acción" />
+<Card titulo="Título de la tarjeta" imagenUrl="https://via.placeholder.com/400x200" descripcion="Este es un ejemplo de una tarjeta simple con Tailwind CSS." botonTexto="Acción" />
+
+</div>          
         </div>
       </div>
     </>

@@ -1,9 +1,18 @@
-export default function Card(){
+import {BPrimario} from "@/components/ui/buttom";
+interface CardProps {
+    titulo: string;
+    imagenUrl: string;
+    descripcion: string;
+    botonTexto: string;
+}
+export default function Card({ titulo, imagenUrl, descripcion, botonTexto }: CardProps) {
     return(
-        <div className="w-full max-w-sm bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-bold mb-2">Título de la tarjeta</h2>
-            <p className="text-gray-700 mb-4">Este es un ejemplo de una tarjeta simple con Tailwind CSS.</p>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Acción</button>
+        <div className="w-full max-w-sm bg-white rounded-lg shadow-2xl p-6">
+            <h2 className="text-xl font-bold mb-2">{titulo}</h2>
+            <img src={imagenUrl} alt="Imagen de ejemplo" className="w-full h-48 object-cover mb-4 rounded">
+            </img>
+            <p className="text-gray-700 mb-4">{descripcion}</p>
+            <BPrimario texto={botonTexto} />
         </div>  
     );
 }
