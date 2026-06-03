@@ -1,10 +1,32 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "tailwind-animations";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    --animate-reveal: reveal linear both;
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+        }
+        30% { /* Completamente visible al subir el 20% en pantalla */
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        60% { /* Empieza a desaparecer antes (al 60% de su recorrido en lugar del final) */
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        100% { /* Completamente invisible al salir por arriba */
+            opacity: 0;
+            transform: translateY(-40px) scale(0.95);
+        }
+    }
+
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
     --color-sidebar-ring: var(--sidebar-ring);

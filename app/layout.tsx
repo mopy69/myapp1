@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import "./global.css";
-import Navbar from "@/components/navbar";
+import Navbar from "@/app/components/navbar";
+import Footer from "@/components/footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -14,9 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={cn("font-sans", inter.variable)}>
-      <body className="min-h-screen w-full flex flex-col items-center bg-gray-100">
+      <body className="min-h-screen w-full flex flex-col bg-gray-100">
         <Navbar />
-        {children}
+        <main className="w-full flex flex-col items-center">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

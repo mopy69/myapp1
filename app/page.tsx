@@ -1,6 +1,7 @@
-import Hero from "@/components/sections/hero";
-import Beneficios from "@/components/sections/beneficios";
-import Destacados from "@/components/sections/destacados";
+import Hero from "@/app/components/hero/hero";
+import Beneficios from "@/app/components/beneficios";
+import Destacados from "@/app/components/destacado";
+import Criticas from "@/app/components/criticas";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Hero />
         <Beneficios />
         <Destacados />
+        <Criticas />
       </div>
     </>
   );

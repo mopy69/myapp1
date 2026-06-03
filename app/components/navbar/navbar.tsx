@@ -1,26 +1,21 @@
-"use client"; //para usar hooks
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { UserRound } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const navItems = [
-  { label: "Inicio", href: "/" },
-  { label: "Tienda", href: "/tienda" },
-  { label: "Sucursales", href: "/sucursales" },
-  { label: "Envío", href: "/envio" },
-  { label: "Novedades", href: "/novedades" },
-];
+import { navbarLinks } from "./navbar.data";
 
 export default function Navbar() {
   const pathname = usePathname();
   return (
     <nav className=" w-full py-4 shadow-sm border-b  border-gray-300 sticky top-0 z-50 transparent backdrop-blur-3xl bg-white/90">
       <div className="max-w-6xl mx-auto grid grid-cols-3 items-center px-6">
-        <div className="text-2xl font-bold hover:text-green-800 justify-self-start">LMC</div>
+        <div className="text-2xl font-bold hover:text-green-800 justify-self-start">
+          LMC
+        </div>
         <ul className="flex flex-row items-center justify-center gap-4 justify-self-center">
-          {navItems.map((item) => {
+          {navbarLinks.map((item) => {
             const isActive = pathname === item.href;
             return (
               <li key={item.href} className="relative">
@@ -33,7 +28,7 @@ export default function Navbar() {
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  {item.label}
+                  {item.name}
                 </Link>
                 {isActive ? (
                   <span className="absolute left-0 right-0 -bottom-1 h-[1.5px] rounded-full bg-green-600" />
