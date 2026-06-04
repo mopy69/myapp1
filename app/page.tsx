@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Hero from "@/app/components/hero/hero";
 import Beneficios from "@/app/components/beneficios";
 import Destacados from "@/app/components/destacado";
@@ -12,6 +13,7 @@ export default function Home() {
         <Destacados />
         <Criticas />
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,7 @@
 export const destacadosData = [
     {
         icon: "🥛",
-        title: "Productos Frescos",
+        title: "Lacteos",
     },
     {
         icon: "🥤",

@@ -1,6 +1,5 @@
 import "./global.css";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -16,10 +15,9 @@ export default function RootLayout({
     <html lang="es" className={cn("font-sans", inter.variable)}>
       <body className="min-h-screen w-full flex flex-col bg-gray-100">
         <Navbar />
-        <main className="w-full flex flex-col items-center justify-center flex-1">
+        <main className="w-full flex flex-col items-center justify-center">
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );

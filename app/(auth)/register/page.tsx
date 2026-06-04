@@ -45,7 +45,7 @@ export default function RegisterPage() {
 	};
 
 	return (
-		<div className="flex w-full items-center py-8 justify-center min-h-screen">
+		<div className="flex w-full items-center justify-center flex-1">
     		<div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
 				<h1 className="text-2xl font-bold mb-6 text-center">Register</h1>
 

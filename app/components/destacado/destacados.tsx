@@ -3,7 +3,7 @@ import { destacadosData } from "./destacados.data";
 
 export default function Destacados() {
   return (
-    <div className="h-auto w-full py-30 timeline-view animate-reveal">
+    <div className="h-auto w-full py-16 md:py-30 timeline-view animate-reveal">
           <div className="flex flex-col items-center gap-4 mb-6 text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-6">
           Categorias populares
@@ -14,9 +14,9 @@ export default function Destacados() {
         </p>
       </div>
       
-      <div className="flex flex-row w-full h-auto max-w-6xl py-10 gap-5 mx-auto">
+      <div className="flex flex-row w-full max-w-6xl py-10 gap-5 mx-auto px-4 justify-items-center">
         {destacadosData.map((destacado, index) => (
-        <Card className="w-72 h-40 flex flex-col items-center justify-center text-2xl font-bold hover:scale-105 transform transition-all duration-300 ring-1 ring-white/20" key={index}>
+        <Card className="flex-1 w-full max-w-xs h-40 flex flex-col items-center justify-center text-2xl font-bold hover:scale-105 transform transition-all duration-300 ring-1 ring-white/20" key={index}>
           <CardHeader className="flex items-center justify-center text-4xl">
             {destacado.icon}
           </CardHeader>
