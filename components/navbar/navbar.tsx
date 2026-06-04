@@ -38,13 +38,17 @@ export default function Navbar() {
           })}
         </ul>
         <div className="flex items-center gap-2 justify-self-end">
-          <Button variant="default">
-            <UserRound size={14} />
-            Iniciar sesión
-          </Button>
-          <Button variant="outline" size="sm">
-            Registrarse
-          </Button>
+          <Link href="/login">
+            <Button variant="default">
+              <UserRound size={14} />
+              Iniciar sesión
+            </Button>
+          </Link>
+          <Link href="/register">
+            <Button variant="outline" size="sm">
+              Registrarse
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

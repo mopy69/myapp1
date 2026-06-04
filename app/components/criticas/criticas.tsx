@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 
 export default function Criticas() {
     return (
-        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 items-stretch justify-center h-auto py-16 md:py-24 gap-6 mx-auto px-4 animate-reveal">
+        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 items-stretch justify-center h-auto py-16 md:py-24 gap-6 mx-auto px-4">
             {criticasData.map((critica) => (
                 <Card className="ring-1 ring-white/10 shadow flex flex-col justify-between hover:shadow-lg transition-shadow duration-300" key={critica.id}>
                     <CardHeader className="pb-2">

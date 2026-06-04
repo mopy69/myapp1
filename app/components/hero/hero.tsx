@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center h-auto pt-50 gap-10 animate-fade-in">
+    <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center h-auto pt-30 gap-10 animate-fade-in">
       <div className="flex flex-col items-start justify-center gap-4 rounded-xl w-1/2">
         <h1 className="text-5xl font-bold text-gray-800">
           Tu minimarket moderno a un clic de distancia
