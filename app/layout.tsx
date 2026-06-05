@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="es" className={cn("font-sans", inter.variable)}>
       <body className="min-h-screen w-full flex flex-col bg-gray-100">
         <Navbar />
-        <main className="w-full flex flex-col items-center justify-center">
+        <main className="w-full flex flex-col items-center justify-center flex-1">
           {children}
         </main>
       </body>

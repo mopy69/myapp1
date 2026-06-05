@@ -29,7 +29,7 @@ export default function LoginPage() {
       }
 
       router.push('/dashboard');
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setLoading(false);
@@ -37,7 +37,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex w-full items-center justify-center flex-1">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
@@ -86,7 +86,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-gray-600 mt-4">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <a href="/signup" className="text-blue-500 hover:underline">
             Sign up
           </a>

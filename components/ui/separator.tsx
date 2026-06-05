@@ -1,6 +1,6 @@
 import * as React from "react";
 
-interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {}
+type SeparatorProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
   ({ className = "", ...props }, ref) => (

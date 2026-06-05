@@ -22,7 +22,7 @@ export default function Criticas() {
                         </div>
                     </CardHeader>
                     <CardContent className="py-2">
-                        <p className="text-gray-600 dark:text-gray-300 italic">"{critica.review}"</p>
+                        <p className="text-gray-600 dark:text-gray-300 italic">&ldquo;{critica.review}&rdquo;</p>
                     </CardContent>
                     <CardFooter className="flex flex-col items-start pt-4 border-t border-gray-100 dark:border-zinc-800">
                         <CardTitle className="text-lg font-semibold">{critica.name}</CardTitle>
