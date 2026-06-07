@@ -4,7 +4,7 @@ import { beneficiosData } from "./beneficios.data";
 
 export default function Beneficios() {
   return (
-    <div className="min-h-screen flex flex-col justify-center py-16 md:py-24 px-4">
+    <div className="w-full min-h-screen flex flex-col justify-center py-16 md:py-24 px-4">
       <div className="w-full max-w-6xl mx-auto text-center mb-12 animate-reveal timeline-view">
         <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-white">
           ¿Por qué elegir FreshMart?

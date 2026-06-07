@@ -10,13 +10,13 @@ export default function Destacados() {
         </h2>
         <p className="text-gray-600 text-lg mb-12">
           Explora nuestras categorías más populares y encuentra todo lo que
-          necesitas
+          necesitas flex lg:flex-row flex-col
         </p>
       </div>
       
-      <div className="flex flex-row w-full max-w-6xl py-10 gap-5 mx-auto px-4 justify-items-center">
+      <div className="flex flex-wrap w-full max-w-6xl py-10 gap-5 mx-auto px-4 justify-center">
         {destacadosData.map((destacado, index) => (
-        <Card className="flex-1 w-full max-w-xs h-40 flex flex-col items-center justify-center text-2xl font-bold hover:scale-105 transform transition-all duration-300 ring-1 ring-white/20" key={index}>
+        <Card className="w-[calc(50%-10px)]  lg:w-42 h-40 items-center justify-center text-2xl font-bold hover:scale-105 transform transition-all duration-300 ring-1 ring-white/20" key={index}>
           <CardHeader className="flex items-center justify-center text-4xl">
             {destacado.icon}
           </CardHeader>
