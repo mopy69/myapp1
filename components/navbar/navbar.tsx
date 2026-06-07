@@ -1,45 +1,24 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  UserRound,
-  Menu,
-  Home,
-  ShoppingBag,
-  MapPin,
-  Truck,
-  Briefcase,
-  Store,
-} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navbarLinks } from "./navbar.data";
+
+import {
+  UserRound,
+  Menu,
+  ShoppingBag,
+  Store,
+} from "lucide-react";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetFooter,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
-const getIcon = (name: string) => {
-  switch (name) {
-    case "Inicio":
-      return <Home size={18} />;
-    case "Tienda":
-      return <ShoppingBag size={18} />;
-    case "Sucursales":
-      return <MapPin size={18} />;
-    case "Envio":
-      return <Truck size={18} />;
-    case "Trabajos":
-      return <Briefcase size={18} />;
-    default:
-      return null;
-  }
-};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -90,14 +69,10 @@ export default function Navbar() {
 
         <div className="lg:hidden">
           <Sheet>
-            <SheetTrigger>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-gray-700 hover:text-green-800 focus-visible:ring-0"
-              >
-                <Menu size={24} />
-              </Button>
+            <SheetTrigger render={
+              <Button variant="ghost" size="icon" className="text-gray-700 hover:text-green-800 focus-visible:ring-0" />
+            }>
+              <Menu size={24} />
             </SheetTrigger>
             <SheetContent className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between">
               <div>
@@ -127,7 +102,7 @@ export default function Navbar() {
                         <span
                           className={`transition-colors duration-200 ${isActive ? "text-green-700 dark:text-green-400" : "text-gray-400 dark:text-gray-500"}`}
                         >
-                          {getIcon(item.name)}
+                          {item.icon && <item.icon size={16} />}
                         </span>
                         <span>{item.name}</span>
                       </Link>
