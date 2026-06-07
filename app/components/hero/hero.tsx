@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <div className="max-w-6xl w-full flex lg:flex-col flex-col-reverse md:flex-row items-center justify-center min-h-[calc(100vh-80px)] py-12 md:py-0 gap-10 animate-fade-in px-4">
+    <div className="max-w-6xl w-full flex flex-col-reverse md:flex-row items-center justify-center min-h-[calc(100vh-80px)] py-12 md:py-0 gap-10 animate-fade-in px-4">
       <div className="flex flex-col items-start justify-center gap-4 rounded-xl w-full md:w-1/2">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
           Tu minimarket moderno a un clic de distancia

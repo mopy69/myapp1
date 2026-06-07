@@ -8,7 +8,6 @@ import { navbarLinks } from "./navbar.data";
 import {
   UserRound,
   Menu,
-  ShoppingBag,
   Store,
 } from "lucide-react";
 import {
