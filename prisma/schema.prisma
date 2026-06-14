@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
+}
+
+enum OrderStatus {
+  PENDIENTE
+  PREPARANDO
+  EN_CAMINO
+  ENTREGADO
+  CANCELADO
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  phone     String?  // Teléfono principal del usuario
+  address   String?  // Dirección por defecto
+  role      Role     @default(CUSTOMER)
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  slug        String    @unique // URL amigable: "lacteos", "bebidas"
+  description String?
+  imageUrl    String?   // Imagen de la categoría
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id          String      @id @default(uuid())
+  name        String
+  slug        String      @unique // URL amigable: "leche-pil-1l"
+  description String?
+  price       Float
+  stock       Int         @default(0)
+  imageUrl    String?     // Imagen del producto
+  isActive    Boolean     @default(true) // Admin puede ocultar productos sin borrarlos
+  categoryId  String
+  category    Category    @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Order {
+  id              String      @id @default(uuid())
+  userId          String
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status          OrderStatus @default(PENDIENTE)
+  total           Float
+  deliveryAddress String      // Dirección exacta de entrega
+  phoneContact    String      // Teléfono para avisar cuando el pedido esté cerca
+  notes           String?     // Instrucciones especiales ("dejar en portería", "tocar timbre 3B")
+  items           OrderItem[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+  quantity  Int
+  price     Float    // Precio al momento de la compra (histórico)
+  createdAt DateTime @default(now())
+}
